@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Assign grid instructions to our parent grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: 136px 1fr;
+  grid-template-rows: 120px 1fr ;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav main"
+    "sidenav footer";
+  height: 100vh;
+}
+
+.menu-icon {
+  position: fixed; /* Needs to stay visible for all mobile scrolling */
+  display: flex;
+  top: 27px;
+  left: 35px;
+  height: 81px;
+  width: 55px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 12px;
+}
+
+
+/* Give every child element its grid name */
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color:white;
+  padding-top: 45px;
+
+}
+
+.header__title {
+font-family: 'Quicksand';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 120%;
+color: #005684;
+margin-right: auto;
+
+}
+
+.header__name{
+color:#1D2951 ;
+font-family: 'Quicksand';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 120%;
+text-align: right;
+margin-left: 18px;
+margin-right: 18px;
+}
+
+
+.sidenav {
+  grid-area: sidenav;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  background-color: #005684;
+}
+
+
+.sidenav__list {
+  padding: 0;
+  margin-top: 125px;
+  list-style-type: none;
+}
+
+.sidenav__list-item {
+  height: 70px;
+  width: 136px;
+  top: 125px;
+  color: #ddd;
+  font-family: 'Quicksand', sans-serif;
+  font-style: bold;
+  font-size: 16px;
+  font-weight: 700;
+  line-height:75px;
+  text-align: center;
+
+}
+
+.sidenav__list-item:hover {
+  background-color: rgb(29, 41, 81);
+  cursor: pointer;
+
+}
+.main {
+  grid-area: main;
+   display: flex;
+   flex-direction: column;
+}
+
+.main-base {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  border: #005684;
+  padding: 20px;
+}
+
+.main-base__Milestonebox{
+  display: flex;
+  align-content: center;
+  margin-right: auto;
+  width: 1032px;
+}
+
+.main-base__Milestonetext{
+  align-content: stretch;
+  width:15%;
+}
+.main-base__Carousel{
+  width: 85%;
+  background-color: white;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.card {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+
+  height: auto;
+  color: #fff;
+  cursor: pointer;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 10px;
+}
+
+.month{
+  background-color: #005684;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.day{
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.leftPanel{
+display: flex;
+flex: 1;
+justify-content: center;
+align-items: center;
+padding: 10px;
+}
+
+
+.square{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #d1d1d1;
+  width: 50px;
+  height: 50px;
+  
+}
+
+.rightPanel{
+ display: flex;
+ flex: 3;
+ align-items: center;
+ justify-content: flex-start; 
+}
+
+
+
+
+
+/* Non-mobile styles, 750px breakpoint */
+@media only screen and (min-width: 46.875em) {
+  /* Show the sidenav */
+  .grid-container {
+    grid-template-columns: 136px 1fr;
+    grid-template-areas:
+      "sidenav header"
+      "sidenav main"
+      "sidenav footer";
+  }
+
+  .header__search {
+    margin-left: 0;
+  }
+
+
+}
+
+/* Medium screens breakpoint (1050px) */
+@media only screen and (min-width: 65.625em) {
+  /* Break out main cards into two columns */
+  .main-cards {
+    column-count: 2;
+  }
+}
+
+.buttons button{
+  border: none;
+  cursor:pointer;
+  background-color: transparent;
+}
+
+.buttons button:first-child img{
+  transform: rotate(180deg);
+}
+
+
+
